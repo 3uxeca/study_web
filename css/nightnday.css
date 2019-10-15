@@ -1,0 +1,42 @@
+h1 {
+    font-size: 60px;
+    /* font-family: 'Courier New', Courier, monospace; */
+    color: slateblue;
+    text-align: center;
+    text-shadow: 2px 2px 3px rgb(253, 253, 253);
+}
+
+p {
+    font-size: 20px;
+    /* font-family: 'Courier New', Courier, monospace; */
+    font-weight: bold;
+    text-align: center;
+}
+
+
+div#center {
+    margin-top: 50px;
+    text-align: center;
+}
+
+div#top {
+    margin-bottom: 300px;
+}
+
+.btn-secondary,
+.btn-secondary:hover,
+.btn-secondary:focus {
+  color: #333;
+  text-shadow: none; /* Prevent inheritance from `body` */
+  background-color: #fff;
+  border: .05rem solid rgba(0, 0, 0, 0.349);
+}
+
+.btn-primary,
+.btn-primary:hover,
+.btn-primary:focus {
+  color: #333;
+  text-shadow: none; /* Prevent inheritance from `body` */
+  background-color: #fff;
+  border: .05rem solid rgba(0, 0, 0, 0.349);
+}

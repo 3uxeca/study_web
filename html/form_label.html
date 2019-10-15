@@ -1,0 +1,30 @@
+<!-- label을 지정해주면, 해당 텍스트를 클릭했을 때 어떤 부분을 가리키는지 알 수 있음  -->
+<!-- id 값을 입력하기 귀찮다면, label 태그로 전체를 감싼다. -->
+<html>
+    <body>
+        <form action="">
+            <p>
+                <label for="id_txt">text</label>:
+                <input id="id_txt" type="text" name="id" value="default">
+            </p>
+            <p>
+                <label for="pwd">password</label>:
+                <input id="pwd" type="password" name="pwd" value="default">
+            </p>
+            <p>
+                <label>textarea: 
+                <textarea id="comment" cols="50" rows="2">default</textarea>
+                </label>
+            </p>
+            <p>
+                <!-- label을 클릭해도 체크박스가 선택되는 효과 -->
+                <label>
+                 <input type="checkbox" name="color" value="red"> !!RED!!
+                </label>
+                <label for="color_blue">
+                 <input id="color_blue" type="checkbox" name="color" value="blue"> !!BLUE!!
+                </label>
+            </p>
+        </form>
+    </body>
+</html>

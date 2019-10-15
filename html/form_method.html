@@ -1,0 +1,16 @@
+<!-- 서버(php) 쪽으로 데이터를 전송할 때 id=oo 라는 url 값을 받아 처리를 한다.  -->
+<!-- 예를들어 password 같은 보안 항목이 노출되는 것을 막기 위해 url 형식이 아닌 감춰서 전송하는 것이 method=post 방식이다. -->
+<!-- method를 지정하지 않으면 default값은 get 방식(url 형태로 전송)으로, 그대로 노출된다. -->
+<!-- form을 이용해 데이터를 전송하면 거의 100% post 방식을 이용해 전송하는 것이 좋다. (하지만 이 방식은 서버 엔지니어의 권한으로 요청대로 한다.) -->
+<html>
+    <head>
+        <meta charset="utf-8">
+    </head>
+    <body>
+        <form action="http://localhost/method.php" method="post">
+            <input type="text" name="id">
+            <input type="password" name="pwd">
+            <input type="submit">
+        </form>
+    </body>
+</html>

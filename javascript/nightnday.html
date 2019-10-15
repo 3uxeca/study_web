@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <link href="https://fonts.googleapis.com/css?family=Indie+Flower|Londrina+Outline|Open+Sans+Condensed:300" rel="stylesheet">
+        <style>
+            @import url("../css/nightnday.css");
+            #font1 {
+                /* font-family: 'Indie Flower', Courier; */
+                font-family: 'Open Sans Condensed', Courier; 
+            }
+            #font2 {
+                /* font-family: 'Indie Flower', Courier; */
+                font-family: 'Open Sans Condensed', Courier; 
+            }
+        </style>
+    </head>
+    <body>
+        <div id="top">
+        </div>
+        <h1 id="font1">
+            Night & Day
+        </h1>
+        <p id="font2">
+            I will show you this window with night & day theme :)
+        </p>
+        <div id="center">
+        <input class="btn btn-primary" type="button" value="night" onclick="
+        document.querySelector('body').style.backgroundColor='black';
+        document.querySelector('body').style.color='white';
+        ">
+        <input class="btn btn-primary" type="button" value="day" onclick="
+        document.querySelector('body').style.backgroundColor='white';
+        document.querySelector('body').style.color='black';
+        ">
+        </div>
+    </body>
+</html>
