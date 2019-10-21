@@ -19,20 +19,36 @@
         <div id="top">
         </div>
         <h1 id="font1">
-            Night & Day
+           * Night & Day *
         </h1>
         <p id="font2">
-            I will show you this window with night & day theme :)
+            I will show you this window with * Night & Day * theme ;)
         </p>
         <div id="center">
-        <input class="btn btn-primary" type="button" value="night" onclick="
-        document.querySelector('body').style.backgroundColor='black';
-        document.querySelector('body').style.color='white';
+        <input class="btn btn-primary" type="button" value="* Sleep *" onclick="
+            if(document.querySelector('body').dataset.mode === 'day'){
+            document.querySelector('body').style.backgroundColor = 'black';
+            document.querySelector('body').style.color = 'white';
+            document.querySelector('body').dataset.mode = 'night';
+            this.value = '* Wake up *';
+         } else {
+            document.querySelector('body').style.backgroundColor = 'white';
+            document.querySelector('body').style.color = 'black';
+            document.querySelector('body').dataset.mode = 'day';
+            this.value = '* Sleep *';
+          }
         ">
-        <input class="btn btn-primary" type="button" value="day" onclick="
-        document.querySelector('body').style.backgroundColor='white';
-        document.querySelector('body').style.color='black';
-        ">
+
         </div>
     </body>
 </html>
+
+<!-- 
+<input class="btn btn-primary" type="button" value="* Night *" onclick="
+document.querySelector('body').style.backgroundColor='black';
+document.querySelector('body').style.color='white';
+">
+<input class="btn btn-primary" type="button" value="* Day *" onclick="
+document.querySelector('body').style.backgroundColor='white';
+document.querySelector('body').style.color='black';
+"> -->
