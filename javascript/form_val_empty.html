@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>공백 검증</title>
+    <script>
+        function checkNotEmpty(field) {
+            if (field.value.length == 0) {
+                alert("아이디는 필수값입니다.");
+                field.focus();
+                return false;
+            }
+            return true;
+        }
+    </script>
+</head>
+<body>
+    <form>
+        이름 : <input type="text" id="user" />
+        <input type="button" onclick="checkNotEmpty(document.getElementById('user'))" value="확인" />
+    </form>
+</body>
+</html>

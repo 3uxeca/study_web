@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>String 객체</title>
+
+    <script>
+        function checkID() {
+            var s = document.getElementById("id").value;
+            if (s.length < 6) {
+                alert("아이디는 6글자 이상이어야 합니다.")
+            } else {
+                alert("환영합니다.");
+            }
+        }
+        function checkPW() {
+            var s2 = document.getElementById("pw").value;
+            if (s2.length < 8) {
+                alert("비밀번호는 8자리 이상이어야 합니다.");
+            } else {
+                alert("환영합니다.");
+            }
+        }
+    </script>
+</head>
+<body>
+    아이디 : <input type="text" id="id" size=20>
+    <button onclick="checkID()">검사</button>
+    비밀번호 : <input type="password" id="pw" size=20>
+    <button onclick="checkPW()">검사</button>
+    <!-- 대소문자 변환 -->
+    <h5>s = 'aBcDeF'일 때, toLowerCase & toUpperCase</h5>
+    <pre><script>
+        var s = 'aBcDeF';
+        var result1 = s.toLowerCase();
+        var result2 = s.toUpperCase();
+        document.writeln("s.toLowerCase() : " + result1);
+        document.writeln("s.toUpperCase() : " + result2);
+    </script></pre>
+    <!-- 문자열 붙이기 -->
+    <script>
+        var s1 = " 너랑 ";
+        var s2 = " 나 ";
+
+        s3 = s1.concat(s2);
+        document.writeln('"' + s3 + '"' + "<br>");
+    </script>
+    <!-- 문자열 검색 -->
+    <script>
+        var s = "Welcome to the JavaScript World!";
+        var n = s.indexOf("to");
+        document.writeln(n + '<br>');
+    </script>
+    <!-- 문자열 매칭 -->
+    <script>
+        str = "Like Mother, like daughter";
+        result = str.match(/like/ig);
+        document.writeln(result+"<br>");
+    </script>
+    <!-- 문자열 대체 -->
+    <script>
+        s = "Hong's number is 123-4567.";
+        result = s.replace("Hong's", "3uxe's");
+        document.writeln(result + "<br>");
+    </script>
+    <!-- 문자열 split -->
+    <script>
+        s = "One, Two, Three, Four, Five";
+        array = s.split(',');
+        for (i = 0; i < array.length; i++) {
+            document.writeln(i + '-' + array[i] + '<br>');
+        }
+    </script>
+    <!-- HTML 랩퍼 메서드 -->
+    <script>
+        var s = "This is a test.";
+        var t = "DEAN - Instagram, Yerin Paek - Square(2017)"
+        document.write("Big : " + s.big() + "<br>");
+        document.write("Small : " + s.small() + "<br>");
+        document.write("Bold : " + s.bold() + "<br>");
+        document.write("Italic : " + s.italics() + "<br>");
+        document.write("Fixed : " + s.fixed() + "<br>");
+        document.write("Strike : " + s.strike() + "<br>")
+        document.write("Fontcolor " + s.fontcolor("orange") + "<br>");
+        document.write("Fontsize : " + s.fontsize(6) + "<br>");
+        document.write("Subscript : " + s.sub() + "<br>");
+        document.write("Superscript : " + s.sup() + "<br>");
+        document.write("Link : " + s.link("http://www.google.com") + "<br>");
+        document.write("Fixed : " + t.fixed() + "<br>");
+    </script>
+    <!-- 문자열 리터럴과 문자열 객체 -->
+    <script>
+        var sLiteral = "문자열 리터럴";
+        sObject = new String("문자열 객체");
+
+        document.writeln(typeof (sLiteral) + '<br>');
+        document.writeln(typeof (sObject) + "<br>");
+    </script>
+</body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>요소의 속성 / style 변경하기</title>
+</head>
+<body>
+    <img id="image" src="box.png" width="128" height="128">
+    <script>
+        function changeImage() {
+  
+                document.getElementById("image").src = "calculator.png";
+        
+        }
+
+    </script>
+    <input type="button" id="button" onclick="changeImage()" value="* click me *"/>
+    
+    <p id="pl">This is a paragraph.</p>
+    <script>
+        function changeStyle() {
+            document.getElementById("pl").style.color = "red";
+            document.getElementById("pl").style.fontFamily = "Century Schoolbook";
+            document.getElementById("pl").style.fontStyle = "italic";
+        }
+    </script>
+    <input type="button" onclick="changeStyle()" value="* click me :) *" 
+</body>
+</html>

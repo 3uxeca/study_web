@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>* Calculator *</title>
+    
+    <script>
+        var expression="";
+
+        function add(character) {
+            expression = expression + character;
+            document.getElementById("display").value = expression;
+        }
+        function compute() {
+            document.getElementById("display").value = eval(expression);
+        }
+        function clearDisplay() {
+            expression = "";
+            document.getElementById("display").value = "0";
+        }
+    </script>
+
+    <style>
+        body { width:1280px; margin-left:auto; margin-right:auto; }
+        form { width:100%; padding-top:10%; text-align:center;}
+        form input { cursor:pointer; }
+    </style>
+</head>
+<body>
+    <form>
+        * Simple Calculator *
+        <br> 
+        <input id="display" value="0" size="36">
+        <br>
+        <input type="button" value="    7    " onclick="add('7')">
+        <input type="button" value="    8    " onclick="add('8')">
+        <input type="button" value="    9    " onclick="add('9')">
+        <input type="button" value="    /    " onclick="add('/')">
+        <br>
+        <input type="button" value="    4    " onclick="add('4')">
+        <input type="button" value="    5    " onclick="add('5')">
+        <input type="button" value="    6    " onclick="add('6')">
+        <input type="button" value="    *    " onclick="add('*')">
+        <br>
+        <input type="button" value="    1    " onclick="add('1')">
+        <input type="button" value="    2    " onclick="add('2')">
+        <input type="button" value="    3    " onclick="add('3')">
+        <input type="button" value="    -    " onclick="add('-')">
+        <br>
+        <input type="button" value="    0    " onclick="add('0')">
+        <input type="button" value="    +    " onclick="add('+')">
+        <br>
+        <input type="button" value="    clear    " onclick="clearDisplay()">
+        <input type="button" value="    Enter    " name="enter" onclick="compute()">
+    </form>
+</body>
+</html>

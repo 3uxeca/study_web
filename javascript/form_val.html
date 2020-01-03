@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>폼 유효성 검사</title>
+    <style>
+        .wrapper { width:1280px; margin-left:auto; margin-right:auto; }
+        h3 { text-align:center; }
+        form { margin-left:43%; }
+        form input { height:20px; margin-bottom:3%; }
+        input[type="submit"] { width:100px;}
+    </style>
+    <script>
+        function display(form) {
+            alert(form["addr"].value);
+        }
+    </script>
+</head>
+<body>
+<div class="wrapper">
+    <h3>회원가입</h3>
+    <form>
+        이름: <input type="text" id='name' /><br />
+        주소: <input type="text" id='addr' onclick="display(this.form)" /><br />
+        생일: <input type="date" id='birthday' /><br />
+        아이디(6-8 문자): <input type="text" id='username' /><br />
+        이메일: <input type="email" id='email' /><br />
+        휴대폰: <input type="tel" id='phone' /><br />
+        <input type="submit" value="확인" /><br />      
+    </form>
+</div>   
+</body>
+</html>

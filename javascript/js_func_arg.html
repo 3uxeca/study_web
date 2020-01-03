@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>인수와 매개 변수</title>
+
+    <script>
+        function greeting(name, position) {
+            alert(name + " " + position + "님 ㅎㅇㅎㅇ");
+        }
+        var hello = function() {
+            alert("Hi Hello 안녕?");
+        };
+        hello();
+
+        function divide(a,b) {
+            if (b == 0) {
+                return;
+            }
+            return a / b;
+        }
+        input = prompt("a의 값");
+        a = parseInt(input);
+
+        input = prompt("b의 값");
+        b = parseInt(input);
+
+        document.write("result : " + divide(a,b));
+
+        var user = confirm("confirm()은 사용자의 답변을 전달한다아아아아");
+    </script>
+</head>
+<body>
+    <button onclick="greeting('졔졔', '연구원')">* Click Me *</button>
+    <button onclick="location.reload();">* Reload *</button>
+
+    <h1 id="test">이것이 머리다.</h1>
+    <script>
+        function func() {
+            document.write("페이지가 로드된 후 write()를 사용하면 다시 써진닷");
+        }
+    </script>
+    <button type="button" onclick="func()">* Hey! *</button>
+</body>
+</html>

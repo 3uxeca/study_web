@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>새해 디데이 계산기</title>
+</head>
+<body>
+    <div id="remaining"></div>
+    <div id="clock"></div>
+    <script>
+        function datesUntilNewYear() {
+            var now = new Date();
+            var newYear = new Date('January 1, ' + (now.getFullYear() + 1));
+            var diff = newYear - now;
+            var milliseconds = Math.floor(diff % 1000);
+            diff = diff / 1000;
+            var seconds = Math.floor(diff % 60);
+            diff = diff / 60;
+            var minutes = Math.floor(diff % 60);
+            diff = diff / 60;
+            var hours = Math.floor(diff % 24);
+            diff = diff / 24;
+            var days = Math.floor(diff);
+
+            var outStr = "내년 새해가 밝을 때까지 " + days + "일, " + hours + "시간, " + minutes;
+            outStr += "분, " + seconds + "초" + "남았어용~";
+
+            document.getElementById("remaining").innerHTML = outStr;
+            // 1초가 지나면 다시 함수를 호출한다.
+            setTimeout("datesUntilNewYear()", 1000);
+        }
+        
+        // 타이머를 시작한다.
+        datesUntilNewYear();
+
+        function setClock() {
+            var now = new Date();
+            var s = "현재시각 : " + now.getHours() + ':' + now.getMinutes() + ':' + now.getSeconds();
+            document.getElementById('clock').innerHTML = s;
+            setTimeout('setClock()', 1000);
+            
+        }
+        
+        setClock();
+    </script>
+</body>
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>실습1</title>
+
+    <script>
+        // 문제 10번
+        var input = prompt("100 미만의 정수만 입력 : ");
+        if (input > 100) {
+            alert("정수 " + input + "은 100보다 작지 않다.");
+        }
+
+        // 문제 12번 
+        
+        var planet = ['Mercury', 'Venus', 'Earth', 'Mars', 'Jupiter', 'Saturn', 'Uranus', 'Neptune'];
+        var j = 0;
+        while (j < planet.length) {
+            alert(planet[j]);
+            j++;
+        }
+
+        // 문제 13번
+        var yn = confirm("게임한판하실랭?");
+        if (yn == true) {
+            alert("Ok, Game is Start");
+        } else {
+            alert("Ok, See u Next Time");
+        }
+        
+        // 문제 14번
+        var myFavSong = { singer:"Yerin Paek", time:"05:30", title:"Squre(2017)" };
+        var txt = "";
+        for (var x in myFavSong) {
+            txt += myFavSong[x] + " ";
+        }
+        document.write("My Favorite Song is " + txt);
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

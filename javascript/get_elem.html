@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>HTML 요소 찾기</title>
+
+    <script>
+        // id로 요소 찾기
+        function process() {
+            var obj = document.getElementById("target");
+            alert(obj.value);
+        }
+    </script>
+</head>
+<body>
+    <!-- id로 요소 찾기 -->
+    <form name="myform">
+        <input type="text" id="target" name="text1">
+        <input type="submit" value="제출" onclick="process()">
+    </form>
+
+    <!-- 태그 이름으로 요소 찾기 -->
+    <ul>
+        <li>List item 1</li>
+        <li>List item 2</li>
+        <li>List item 3</li>
+        <li>List item 4</li>
+        <li>List item 5</li>
+    </ul>
+    <script>
+        var list = document.getElementsByTagName('ul')[0];
+        var allItems = list.getElementsByTagName('li'); // list 안에서, 즉 첫 번째 <ul> 안에서 <li> 요소를 전부 찾는다.
+
+        for (var i = 0, length = allItems.length; i < length; i++) {
+            alert(allItems[i].firstChild.data);
+        }
+    </script>
+</body>
+</html>

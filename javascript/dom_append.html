@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>DOM 노드 삭제와 추가 / 새로운 HTML 요소 생성 & 삭제</title>
+
+    <script>
+        function removeNode() {
+            var parent = document.getElementById("target2");
+            var child = document.getElementById("p1");
+            parent.removeChild(child);
+        }
+    </script>
+</head>
+<body>
+    <script>
+        function addtext(t) {
+            if (document.createTextNode) {
+                var node = document.createTextNode(t);
+                document.getElementById("target").appendChild(node);
+            }
+        }
+    </script>
+    <div id="target" onclick="addtext('동적으로 텍스트가 추가된닷&nbsp;')" style="font:20px bold; cursor:pointer;">
+        * Click Me :) *
+    </div>
+    <div id="target2">
+        <p id="p1">First</p>
+        <p id="p2">Second</p>
+    </div>
+    <button onclick="removeNode()">* Delete :( *</button>
+</body>
+</html>

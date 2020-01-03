@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Number</title>
+</head>
+<body>
+    <h4>toExponential([digits]) - 지수형으로 반환, 인수는 소수점 이하 숫자의 개수이다.</h4>
+    <script>
+        var num = 1232.34567;
+        
+        document.writeln("toExponential() : " + num.toExponential() + '<br>');
+        document.writeln("toExponential(1) : " + num.toExponential(1) + '<br>');
+    </script>
+    <h4>toFixed([digits]) - 고정소수점 방식으로 반환, 인수는 소수점 이하 숫자의 개수이다.</h4>
+    <script>
+        var num = 123.456789;
+        document.writeln('toFixed() : ' + num.toFixed() + '<br>');
+        document.writeln('toFixed(1) : ' + num.toFixed(1) + '<br>');
+    </script>
+    <h4>toPrecision([precision)] - 유효숫자 수를 지정한다.</h4>
+    <script>
+        var num = 123.456789;
+        document.writeln("toPrecision(1) : " + num.toPrecision(1) + "<br>");
+        document.writeln("toPrecision(2) : " + num.toPrecision(2) + "<br>");
+    </script>
+    <h4>toString([radix]) - 주어진 진법으로 숫자를 반환한다.</h4>
+    <script>
+        var num = 255;
+        document.writeln("toString() : " + num.toString() + '<br>');
+        document.writeln("toString(16) : " + num.toString(16) + '<br>');
+        document.writeln("toString(8) : " + num.toString(8) + '<br>');
+        document.writeln("toString(2) : " + num.toString(2) + '<br>');
+    </script>
+
+    <script>
+        var count1, count2;
+        count1 = new Number(1.237);
+        count2 = 1.238;
+        if (count1.toFixed(2) === count2.toFixed(2))
+            alert("소수점 2째 자리까지 같당");
+    </script>
+</body>
+</html>

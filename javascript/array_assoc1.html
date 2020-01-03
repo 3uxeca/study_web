@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>JavaScript의 배열 특징 : key</title>
+</head>
+<body>
+    <form name="myForm">
+        field1<input type="text" name="a0"><br />
+        field2<input type="text" name="a1"><br />
+        field3<input type="text" name="a2"><br />
+        <input type="button" value="initialize" onclick="init();">
+    </form>
+
+    <script>
+        function init() {
+            for (var i = 0; i < 3; i++) {
+                document.myForm["a" + i].value = i;
+                // html 요소의 name은 key와 같다.
+                // 따라서 연관 배열 형식으로 접근할 수 있어 반복할 때 유용하게 사용된다.
+            }
+        }
+    </script>
+</body>
+</html>

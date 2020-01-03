@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>마우스클릭이벤트</title>
+
+    <script>
+        function changeColor(c) {
+            document.getElementById("target").style.backgroundColor = c;
+        }
+    </script>
+</head>
+<body id="target">
+    <form method="POST">
+        <input type="radio" name="C1" value="v1" onclick="changeColor('lightblue')">파랑색
+        <input type="radio" name="C1" value="v2" onclick="changeColor('lightgreen')">녹색
+    </form>
+</body>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function Car(model, speed, color) { // 생성자 함수 이름은 항상 대문자로 한다.
+            this.model = model;
+            this.speed = speed;  // 객체의 속성 : 앞에 this가 붙는 변수
+            this.color = color;
+
+            this.brake = function() {
+                this.speed -= 10;
+            }                               // 객체의 메서드 : 앞에 this가 붙는 함수
+            this.accel = function() {
+                this.speed += 10;
+            }
+        }
+
+        var myCar = new Car("520d", 60, "white");
+        myCar.color = "yellow";
+        myCar.brake();
+        myCar.accel();
+        myCar.accel();
+
+        document.write("Model : " + myCar.model + "<br />");
+        document.write("Speed : " + myCar.speed + "<br />");
+        document.write("Color : " + myCar.color + "<br />");
+        
+        myCar.turbo = true;
+        myCar.showModel = function() {
+            alert("모델은 " + this.model + "입니다.");
+        }
+        myCar.showModel();
+        
+    </script>
+</body>
+</html>
