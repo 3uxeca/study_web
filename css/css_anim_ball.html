@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Bouncing Ball css ver.</title>
+    
+    <style>
+        @-webkit-keyframes bounce {
+            from, to {
+                bottom: 0px;
+                -webkit-animation-timing-function: ease-out;
+            }
+
+            50% {
+                bottom: 200px;
+                -webkit-animation-timing-function: ease-in;
+            }
+        }
+
+        #ball {
+            position: absolute;
+            width:20px; height:20px;
+            background: blue; border-radius:10px;
+            -webkit-animation-name: bounce;
+            -webkit-animation-iteration-count: infinite;
+            -webkit-animation-duration: 5s;
+            cursor:pointer;
+        }
+    </style>
+</head>
+<body>
+    <div id="ball"></div>
+</body>
+</html>
