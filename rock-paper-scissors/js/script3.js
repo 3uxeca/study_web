@@ -6,6 +6,7 @@ var DRAW_MSG = " - 컴퓨터와 비겼습니닷 '-'";
 var LOSE_MSG = " - 컴퓨터에게 졌습니당..힝,ㅠ";
 var WIN_MSG = " - 컴퓨터에게 이겨버렸습니다아아아아ㅊㅋㅊㅋ";
 
+
 function onButtonClick(userInput) {
     var comInput;
     var rnd = Math.random();
@@ -17,33 +18,38 @@ function onButtonClick(userInput) {
     } else {
         comInput = PAPER;
     }
+    
+    var result = COM_MSG + comInput;
+
     // 가위
     if (userInput === SCISSORS) {
         if (comInput === SCISSORS) {
-            alert(COM_MSG + comInput + DRAW_MSG);
+            result += DRAW_MSG;
         } else if (comInput === ROCK) {
-            alert(COM_MSG + comInput + LOSE_MSG);
+            result += LOSE_MSG;
         } else {
-            alert(COM_MSG + comInput + WIN_MSG);
+            result += WIN_MSG;
         }
     // 바위
     } else if (userInput === ROCK) {
         if (comInput === SCISSORS) {
-            alert(COM_MSG + comInput + WIN_MSG);
+            result += WIN_MSG;
         } else if (comInput === ROCK) {
-            alert(COM_MSG + comInput + DRAW_MSG);
+            result += DRAW_MSG;
         } else {
-            alert(COM_MSG + comInput + LOSE_MSG);
+            result += LOSE_MSG;
         }
     // 보
     } else {
         if (comInput === SCISSORS) {
-            alert(COM_MSG + comInput + LOSE_MSG);
+            result += LOSE_MSG;
         } else if (comInput === ROCK) {
-            alert(COM_MSG + comInput + WIN_MSG);
+            result += WIN_MSG;
         } else {
-            alert(COM_MSG + comInput + DRAW_MSG);
+            result += DRAW_MSG;
         }  
     }
 
+    alert(result);
 }
+
