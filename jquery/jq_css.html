@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>    
+
+    <title>Document</title>
+
+    <style>
+        div { width:60px; height:60px; }
+    </style>
+</head>
+<body>
+    <div id="div1" style="background-color: blue;"></div>
+    <script>
+        $(document).ready(function() {
+            $("#button1").cilck(function(){
+                var color = $("#div1").css("background-color");
+                $("#result").text("background-color: " + color);
+            });
+            $("#button2").click(function(){
+                $("#div1").css("background-color", "red");
+            });
+        });
+    </script>
+
+    <button id="button1">css(element)</button>
+    <button id="button2">css(element,style)</button>
+    <p id="result">여기에 결과가 표시됩니다.</p>
+</body>
+</html>

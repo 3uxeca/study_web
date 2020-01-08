@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>    
+
+    <title>fade in & out</title>
+
+    <script>
+        $(document).ready(function() {
+            $("#fadeIn").click(function(){
+                $("#box").fadeIn("slow");
+            });
+            $("#fadeOut").click(function(){
+                $("#box").fadeOut("slow");
+            });
+        })
+    </script>
+</head>
+<body>
+    <button id="fadeIn">fadeIn()</button>
+    <button id="fadeOut">fadeOut()</button>
+    <img id="box" src="../practice/box.png" alt="" width="128" height="128" style="display:none; position:relative;"/>
+</body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>    
+
+    <title>슬라이드</title>
+    <script>
+        $(document).ready(function() {
+            $("#slideDown").click(function(){
+                $("#box").slideDown("slow");
+            })
+            $("#slideUp").click(function(){
+                $("#box").slideUp("slow");
+            })
+        })
+
+        function handleDragStart(e) {
+            e.dataTransfer.setData("Image", e.target.id);
+        }
+    </script>
+</head>
+<body>
+    <button id="slideDown">slideDown</button>
+    <button id="slideUp">slideUp</button>
+
+    <img id="box" src="../practice/box.png" draggable="true" alt="" width="128" height="128" style="display:none;position:relative;"/>
+</body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>    
+
+    <title>Document</title>
+    <style>
+        div.out {
+            width: 200px;
+            height: 60px;
+            background-color: yellow;
+        }
+    </style>
+
+</head>
+<body>
+    <div class="out">
+        <p>마우스를 여기로 움직이세용</p>
+        <p>0</p>
+    </div>
+
+    <script>
+        var i = 0;
+        $("div.out").mouseover(function() {
+            $("p:first", this).text("올라간당~~");
+            $("p:last", this).text(++i);
+        })
+    </script>
+</body>
+</html>

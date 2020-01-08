@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>    
+
+    <title>Document</title>
+
+    <style>
+        div { width:200px; height:100%; border:1px dotted orange;}
+    </style>
+    <script>
+        $(document).ready(function(){
+            $("input").focus(function() {
+                $(this).css("background-color", "#e0e0e0");
+            });
+            $("input").blur(function() {
+                $(this).css("background-color", "white");
+            });
+        });
+
+        $("div").on({
+            mouseenter: function() {
+                console.log("hovered over a div");
+            },
+            mouseleave: function() {
+                console.log("mouse left a div");
+            },
+            click: function() {
+                console.log("clicked on a div");
+            }
+        });
+    </script>
+</head>
+<body>
+    아이디 : <input type="text" name="name"><br>
+    <div>오오오</div>
+</body>
+</html>

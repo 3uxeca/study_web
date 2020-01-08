@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>    
+
+    <title>animate</title>
+
+    <script>
+    $(document).ready(function() {
+        $("button").click(function() {
+            $("#box").animate({
+                left:'500px',
+                // opacity:'0.5',
+                width:'50px',
+                },2000);
+        })
+        $("#stop").click(function(){
+        $("#box").stop();
+    })
+    })
+
+    </script>
+</head>
+<body>
+    <img id="box" src="../practice/box.png" alt="" width="128" heigth="128" style="position:relative"/><br/>
+    <button>animate~~</button>
+    <button id="stop">stop!</button>
+</body>
+</html>
