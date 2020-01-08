@@ -1,0 +1,26 @@
+.wrapper {
+    width:960px;
+    margin-left:auto;
+    margin-right:auto;
+}
+
+.ballBox {
+    width:100%;
+    margin-top:10%;
+    text-align:center;
+}
+
+.ball { 
+    display: inline-block;
+    width: 80px; height: 80px;
+    background-color: #ffc107;
+    border-radius: 50%;
+    line-height: 90px;
+    font-size: 50px;
+    margin: 5px;
+    text-align: center;
+}
+
+h1 { text-align:center; }
+strong { color: orange; }
+button { margin-left: 47%; margin-top: 5%; cursor:pointer; }
