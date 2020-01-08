@@ -77,13 +77,20 @@ button {
 .div-control-name {
     font-size: 20px;
     margin-bottom:5px;
+    margin-left:10px;
 }
 
-img {
+h1 img {
     width: 32px;
     height: 32px;
     padding-left: 5px; 
     padding-right: 5px;
 }
-
+.div-control-panel img {
+    width: 28px;
+    height: 28px;
+    padding-left: 5px; 
+    padding-right: 5px;    
+}
 .restartBtn { width:100%; text-align:center; margin:0 auto; margin-top:3%; }
+.restartBtn button { background-color: white; border:1px solid black; }
