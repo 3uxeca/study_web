@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Drag & Drop</title>
+    <style>
+        #shopping_cart { width:48%; height:350px; padding:10px; border:1px dotted blue; float:left; color:#707070; text-align:center; vertical-align: middle; }
+        #boxbox { width:48%; height:350px; padding:10px; border:1px dotted red; float:right; color:#707070; text-align:center; vertical-align: middle; }
+        img { padding-top: 22px; padding-right:15px; }
+        h2 { color:#7383df; text-align:center; }
+        div span { position: absolute; }
+    </style>
+    <script>
+        function allowDrop(e) {
+            e.preventDefault();
+        }
+        function handleDragStart(e) {
+            e.dataTransfer.dffectAllowed = "move";
+            e.dataTransfer.setData("Text", e.target.id);
+        }
+        function handleDrop(e) {
+            e.preventDefault();
+            var src = e.dataTransfer.getData("Text");
+            e.target.appendChild(document.getElementById(src));
+        }
+    </script>
+</head>
+<body>
+    <h2>* Drag & Drop If you want to buy thing! *</h2>
+    <div id="shopping_cart" ondrop="handleDrop(event)" ondragover="allowDrop(event)"><span>wish</span></div>
+    <div id="boxbox" ondrop="handleDrop(event)" ondragover="allowDrop(event)"><span>cart</span></div>
+    
+    <br>
+    <img id="img1" src="tv.png" draggable="true" ondragstart="handleDragStart(event)" width="128" height="128">
+    <img id="img2" src="camera.png" draggable="true" ondragstart="handleDragStart(event)" width="128" height="128">
+    <img id="img3" src="speaker.png" draggable="true" ondragstart="handleDragStart(event)" width="128" height="128">
+    <img id="img4" src="iphone.png" draggable="true" ondragstart="handleDragStart(event)" width="128" height="128">
+    <img id="img5" src="air-conditioner.png" draggable="true" ondragstart="handleDragStart(event)" width="128" height="128">
+    <img id="img6" src="refrigerator.png" draggable="true" ondragstart="handleDragStart(event)" width="128" height="128">
+    <img id="img7" src="microwave-oven.png" draggable="true" ondragstart="handleDragStart(event)" width="128" height="128">
+    <img id="img8" src="coffee-machine.png" draggable="true" ondragstart="handleDragStart(event)" width="128" height="128">
+    <img id="img9" src="laundry.png" draggable="true" ondragstart="handleDragStart(event)" width="128" height="128">
+    <img id="img10" src="dishwasher.png" draggable="true" ondragstart="handleDragStart(event)" width="128" height="128">
+</body>
+</html>

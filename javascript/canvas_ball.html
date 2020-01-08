@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Bouncing Ball Example</title>
+
+    <style>
+        canvas { 
+            background: black;
+            border:1px dotted yellow;
+        }
+    </style>
+    <script>
+        var context;
+        var dx = 5;
+        var dy = 5;
+        var y = 100;
+        var x = 100;
+        function draw() {
+            var canvas = document.getElementById('myCanvas');
+            var context = canvas.getContext('2d');
+            context.clearRect(0,0,300,200);
+            context.beginPath();
+            context.fillStyle = "orange";
+            context.arc(x,y,20,0,Math.PI*2, true);
+            context.closePath();
+            context.fill();
+            if (x < (0 + 20) || x > (300-20)) {
+                dx = -dx;
+            }    
+            if (y < (0 + 20) || y > (200-20)) {
+                dy = -dy;
+            }
+            x += dx;
+            y += dy;
+        }
+        setInterval(draw, 15);
+
+    </script>    
+</head>
+<body>
+    <canvas id="myCanvas" width="300" height="200" ></canvas>
+
+</body>
+</html>

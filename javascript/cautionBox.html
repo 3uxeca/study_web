@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>연습문제</title>
+
+    <style>
+        img { cursor:pointer; }
+    </style>
+<script>
+	window.addEventListener('load', function() {
+		var signup = document.querySelector('#signup');
+		
+		//signup버튼을 클릭했을때
+		signup.addEventListener('click', function() {
+
+			
+			// 아이디와 비번,성별,취미,생일,나이,이메일,메모 객체 셋팅  
+			var id = document.querySelector('#id');
+			var pw1 = document.querySelector('#pw1');
+			var pw2 = document.querySelector('#pw2');
+			var gender = document.querySelectorAll(".gender");
+            var phone = document.querySelector('#phone');
+			var email = document.querySelector('#email');
+
+			
+			//성별 검사
+
+			var genderVal = false;
+			for (var i = 0; i < gender.length; i++) {
+				//성별을 검사하면서 한개라도 체크가되어있다면
+				if (gender[i].checked) {
+					//true를 셋팅
+					genderVal = true;
+				}
+			}
+			
+            // 핸드폰번호 검사
+      
+
+			// 전체 검사
+			// 아이디가 공백이거나 4글자 미만이면
+			if (id.value == '' || id.value.length < 4) {
+				alert('아이디를 4자이상!');
+				//id포커스
+				id.focus();
+			// 비밀번호가 4자리 미만이거나 숫자가 아닐때
+			} else if (pw1.value.length < 4 || isNaN(pw1.value)) {
+				alert('비번 숫자로 4자이상쓰셈');
+				//비밀번호 포커스
+				pw1.focus();
+			// 비밀번호가 처음입력한 값과 다를시
+			} else if (pw1.value != pw2.value) {
+				alert('패스워드가 일치하지 않습니다.');
+				pw2.focus();
+			// 성별이 체크가 안되었을시
+			} else if (genderVal == false) {
+				alert("성별을 입력하세요!");
+				gender[0].focus();
+
+			// 이메일이 입력되지 않았을시
+			} else if (email.value == '') {
+				alert('이메일 공백안됨');
+				email.focus();
+
+			// 핸드폰 번호 입력되지 않았을시 
+			} else if (phone.value == '') {
+                alert('핸드폰 번호 입력해랏');
+                phone.focus();
+             // 전부완료되면 jjnaver로 이동
+            } else {
+				location.href = "http://www.naver.com/";
+			}
+
+		});
+	});
+
+    var canvas = document.getElementById("myCanvas");
+    var context = canvas.getContext("2d");
+</script>
+
+
+</head>
+<body>
+    <script>
+        // 5
+        function onClickEvt() {
+            alert("반갑습니다^^");
+        }
+        // 6
+        function changeAttr() {
+            document.getElementById("test").innerHTML = "이 텍스트는 자바 스크립트에서 변경한 것입니다.";
+        }
+
+        // 7
+        function confirmExp(elem, msg) {
+            var exp = /^[0-9]+$/;
+            if (elem.value.match(exp)) {
+                return true;
+            } else {
+                alert(msg);
+                elem.focus();
+                return false;
+            }
+        }
+        // 8
+        function switchOn() {
+            document.getElementById("switchoff").style.display = "none";
+            document.getElementById("switchon").style.display = "block"
+        }
+        function switchOff() {
+            document.getElementById("switchon").style.display = "none";
+            document.getElementById("switchoff").style.display = "block"
+        }
+
+        // 9 
+        function formChk() {
+            // to do: 입력값 검증
+            if(document.getElementById("aname").value=='') {
+                alert("이름을 입력해주세요");
+                return false;
+            }
+            return true;
+
+
+        }
+        function rdoChk() {
+            var chkRadio = document.getElementsByName('gender');
+            var chk_cnt = 0;
+            for(var i=0; i<chkRadio.length; i++) {
+                if(chkRadio[i].checked == true) chk_cnt++;
+            }
+            if(chk_cnt<1){
+                alert("성별을 입력해주세요");
+                document.formname.chkRadio[0].focus();
+                return;
+            }
+        }
+
+    </script>
+
+<script>
+    window.addEventListener('load', function() {
+        var signup = document.querySelector('#signup');
+    })
+</script>
+
+    <!-- 5 -->
+    <p>자바 스크립트는 이벤트에 반응할 수 있습니다.</p>
+    <button onclick="onClickEvt()">click</button>
+
+    <!-- 6 -->
+    <p id="test">버튼을 누르면 이 요소의 내용이 변경됩니다.</p>
+    <button onclick="changeAttr()">click</button>
+
+    <!-- 7 -->
+    <p>숫자를 입력하시오.</p>
+    <input type="text" id="num">
+    <input type="button" value="입력완료" onclick="confirmExp(document.getElementById('num'), '숫자가 아닙니다')">
+
+    <!-- 8 -->
+    <br>
+    <img id="switchoff" src="switchoff.png" width="128" onclick="switchOn()"/>
+    <img id="switchon" src="switchon.png" width="128" onclick="switchOff()" style="display:none;"/>
+    <p>Push the switch!</p>
+
+    <!-- 9 -->
+    <form action="" method="GET" onsubmit="return validate();">
+        <h2>회원 신청서</h2>
+        
+        아이디* <input type="text" id="id" name="id"/><br>
+        성별* <input type="radio" name="gender" class="gender" value="female"/>여성 
+        <input type="radio" name="gender" class="gender" value="male"/> 남성<br>
+        휴대폰 번호* <input type="text" id="phone"/><br>
+        이메일* <input type="text" id="email" name="email"/> @ 
+            <select id="url">
+                <option>naver.com</option>
+                <option>daum.net</option>
+                <option>nate.com</option>
+        </select><br>
+        패스워드(6~8글자)* <input type="password" id="pw1" name="pw1"/><br>
+        패스워드 확인* <input type="password" id="pw2" name="pw2"/><br>
+        <button type="button" id="signup" value="signup">제출</button>
+        <button type="reset" value="reset">지우기</button>
+    </form>
+
+</body>
+</html>
