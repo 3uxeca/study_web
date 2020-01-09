@@ -34,20 +34,22 @@ function updateUserScore(score) {
 
 function disableComputerButtons(flag) {
     // var computerButtons = document.getElementsByClassName('btn-computer');
-    var $computerButtons = $('.btn-computer');
+    // var $computerButtons = $('.btn-computer');
 
-    for (var i = 0; i < $computerButtons.length; i++) {
-        $computerButtons[i].disabled = flag;
-    }
+    // for (var i = 0; i < $computerButtons.length; i++) {
+    //     $computerButtons[i].disabled = flag;
+    // }
+    $('.btn-computer').prop('disabled',flag);
 }
 
 function disableUserButtons(flag) {
     // var userButtons = getElementsByClassName('btn-user');
-    var $userButtons = $('.btn-user');
+    // var $userButtons = $('.btn-user');
     
-    for (var i = 0; i < $userButtons.length; i++) {
-        $userButtons[i].disabled = flag;
-    }
+    // for (var i = 0; i < $userButtons.length; i++) {
+    //     $userButtons[i].disabled = flag;
+    // }
+    $('.btn-user').prop('disabled',flag);
 }
 
 function onComputerShoot(shootType) {
