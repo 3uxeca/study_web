@@ -17,19 +17,28 @@ var game = {
 
 function showText(s) {
     var $textElem = $("#text");
-    $textElem.html(s);
+    $('#text').fadeOut(400, function () {
+        $textElem.html(s);
+        $('#text').fadeIn(100);
+    });
 }
 
 function updateComputerScore(score) {
     computer.score += score;
     var $comScoreElem = $("#computer-score");
-    $comScoreElem.html(computer.score);
+    // $comScoreElem.html(computer.score);
+    $comScoreElem.animateNumber({
+        number: computer.score
+    });
 }
 
 function updateUserScore(score) {
     user.score += score;
     var $userScoreElem = $("#user-score");
-    $userScoreElem.html(user.score);
+    // $userScoreElem.html(user.score);
+    $userScoreElem.animateNumber({
+        number: user.score
+    });
 }
 
 function disableComputerButtons(flag) {
