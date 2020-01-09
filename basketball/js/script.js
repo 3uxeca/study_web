@@ -17,6 +17,7 @@ var game = {
 
 function showText(s) {
     var $textElem = $("#text");
+
     $('#text').fadeOut(400, function () {
         $textElem.html(s);
         $('#text').fadeIn(100);
@@ -150,3 +151,19 @@ function onUserShoot(shootType) {
     }
 
 }
+$(function() {
+    showText(3);
+
+    setTimeout(function() {
+        showText(2);
+
+        setTimeout(function() {
+            showText(1);
+
+            setTimeout(function() {
+                showText("컴퓨터부터 시작합니다~!")
+                disableComputerButtons(false);
+            }, 1000);
+        }, 1000);
+    }, 1000);
+});
