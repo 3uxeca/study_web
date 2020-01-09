@@ -16,35 +16,37 @@ var game = {
 }
 
 function showText(s) {
-    var textElem = document.getElementById("text");
-    textElem.innerHTML = s;
+    var $textElem = $("#text");
+    $textElem.html(s);
 }
 
 function updateComputerScore(score) {
     computer.score += score;
-    var comScoreElem = document.getElementById("computer-score");
-    comScoreElem.innerHTML = computer.score;
+    var $comScoreElem = $("#computer-score");
+    $comScoreElem.html(computer.score);
 }
 
 function updateUserScore(score) {
     user.score += score;
-    var userScoreElem = document.getElementById("user-score");
-    userScoreElem.innerHTML = user.score;
+    var $userScoreElem = $("#user-score");
+    $userScoreElem.html(user.score);
 }
 
 function disableComputerButtons(flag) {
-    var computerButtons = document.getElementsByClassName('btn-computer');
+    // var computerButtons = document.getElementsByClassName('btn-computer');
+    var $computerButtons = $('.btn-computer');
 
-    for (var i = 0; i < computerButtons.length; i++) {
-        computerButtons[i].disabled = flag;
+    for (var i = 0; i < $computerButtons.length; i++) {
+        $computerButtons[i].disabled = flag;
     }
 }
 
 function disableUserButtons(flag) {
-    var userButtons = document.getElementsByClassName('btn-user');
+    // var userButtons = getElementsByClassName('btn-user');
+    var $userButtons = $('.btn-user');
     
-    for (var i = 0; i < userButtons.length; i++) {
-        userButtons[i].disabled = flag;
+    for (var i = 0; i < $userButtons.length; i++) {
+        $userButtons[i].disabled = flag;
     }
 }
 
@@ -53,31 +55,31 @@ function onComputerShoot(shootType) {
         return;
 
     // var textElem = document.getElementById("text");
-    var comScoreElem = document.getElementById("computer-score");
+    // var $comScoreElem = $("#computer-score");
     
     var shootType = Math.random() < 0.5 ? 2: 3; // 0.5 이하일 때 2점(참), 이상일 때 3점(거짓)
     
     if (shootType === 2) {
-        if (Math.random() < computer['percent2' + shootType]) {
+        if (Math.random() < computer['percent' + shootType]) {
             // 2점슛 1/2 확률로 성공
-            showText("컴퓨터 2점슛 성공ㅎ");
+            showText("컴퓨터 " +  shootType + "점슛 성공ㅎ");
 
             updateComputerScore(shootType);
 
         } else {
-            showText("컴퓨터 2점슛 실패ㅋㅋㅋ");
+            showText("컴퓨터 " + shootType + "점슛 실패ㅋㅋㅋ");
         }
 
     } else {
-        if (Math.random() < computer['percent3' + shootType]) {
+        if (Math.random() < computer['percent' + shootType]) {
             // 3점슛 1/3 확률로 성공
-            showText("컴퓨터 3점슛 성공ㅎ");
+            showText("컴퓨터 " +  shootType + "점슛 성공ㅎ");
             
             updateComputerScore(shootType);
 
         } else {
             // 실패 시
-            showText("컴퓨터 3점슛 실패ㅋㅋㅋㅋㅋㅋㅋㅋ");
+            showText("컴퓨터 " + shootType + "점슛 실패ㅋㅋㅋㅋㅋㅋㅋㅋㅋ");
         }
     }
 
@@ -92,25 +94,25 @@ function onUserShoot(shootType) {
         return;
 
     // var textElem = document.getElementById("text");
-    var userScoreElem = document.getElementById("user-score");
+    // var $userScoreElem = $("#user-score");
 
     if (shootType === 2) {
-        if (Math.random() < user['percent2' + shootType]) {
-            showText("2점슛 성공~~~~~");
+        if (Math.random() < user['percent' + shootType]) {
+            showText(shootType + "점슛 성공~~~~~");
 
             updateUserScore(shootType);
 
         } else {
-            showText("2점슛 실패ㅠ");
+            showText(shootType + "점슛 실패ㅠ");
         }
     } else {
-        if (Math.random() < user['percent3' + shootType]) {
-            showText("3점슛 성공~~~~!~!!~!!!");
+        if (Math.random() < user['percent' + shootType]) {
+            showText(shootType + "점슛 성공~~~~!~!!~!!!");
 
             updateUserScore(shootType);
 
         } else {
-            showText("3점슛 실패ㅠ");
+            showText(shootType + "점슛 실패ㅠ");
         }
     }
 
@@ -121,8 +123,8 @@ function onUserShoot(shootType) {
 
     game.shotsLeft--;
 
-    var shotsLeftElem = document.getElementById('shots-left');
-    shotsLeftElem.innerHTML = game.shotsLeft;
+    var $shotsLeftElem = $('#shots-left');
+    $shotsLeftElem.html(game.shotsLeft);
 
     if (game.shotsLeft === 0) {
         if (user.score > computer.score)
