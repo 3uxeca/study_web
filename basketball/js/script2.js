@@ -1,19 +1,33 @@
+// var comScore = 0;
+// var comPercent2 = 0.5;
+// var comPercent3 = 0.33;
+
+// 컴퓨터 오브젝트
 var computer = {
     score: 0,
     percent2: 0.5,
     percent3: 0.33
-}
+};
 
+// var userScore = 0;
+// var userPercent2 = 0.5;
+// var userPercent3 = 0.33;
+
+// 사용자 오브젝트
 var user = {
     score: 0,
     percent2: 0.5,
     percent3: 0.33
-}
+};
 
+// var isComputerTurn = true;
+// var shotsLeft = 15;
+
+// 게임 오브젝트
 var game = {
     isComputerTurn: true,
     shotsLeft: 15
-}
+};
 
 function showText(s) {
     var textElem = document.getElementById("text");
@@ -48,9 +62,29 @@ function disableUserButtons(flag) {
     }
 }
 
+function updateAI() {
+    var diff = user.score - computer.score;
+
+    if (diff >= 10) {
+        computer.percent2 = 0.7;
+        computer.percent3 = 0.43;
+    } else if (diff >= 6) {
+        computer.percent2 = 0.6;
+        computer.percent3 = 0.38;
+    } else if (diff <= -10) {
+        computer.percent2 = 0.3;
+        computer.percent3 = 0.23;
+    } else if (diff <= -6) {
+        computer.percent2 = 0.4;
+        computer.percent3 = 0.28;
+    }
+}
+
 function onComputerShoot(shootType) {
     if (!game.isComputerTurn)        // 컴퓨터의 차례가 아니라면 슛 로직을 실행하지 않고 함수에서 리턴
         return;
+
+    updateAI();
 
     // var textElem = document.getElementById("text");
     var comScoreElem = document.getElementById("computer-score");
@@ -58,26 +92,26 @@ function onComputerShoot(shootType) {
     var shootType = Math.random() < 0.5 ? 2: 3; // 0.5 이하일 때 2점(참), 이상일 때 3점(거짓)
     
     if (shootType === 2) {
-        if (Math.random() < computer['percent2' + shootType]) {
+        if (Math.random() < computer['percent' + shootType]) {
             // 2점슛 1/2 확률로 성공
-            showText("컴퓨터 2점슛 성공ㅎ");
+            showText("컴퓨터 " + shootType + "점슛 성공ㅎ");
 
             updateComputerScore(shootType);
 
         } else {
-            showText("컴퓨터 2점슛 실패ㅋㅋㅋ");
+            showText("컴퓨터 " + shootType + "점슛 실패ㅋㅋㅋ");
         }
 
     } else {
-        if (Math.random() < computer['percent3' + shootType]) {
+        if (Math.random() < computer['percent' + shootType]) {
             // 3점슛 1/3 확률로 성공
-            showText("컴퓨터 3점슛 성공ㅎ");
+            showText("컴퓨터 " + shootType + "점슛 성공ㅎ");
             
             updateComputerScore(shootType);
 
         } else {
             // 실패 시
-            showText("컴퓨터 3점슛 실패ㅋㅋㅋㅋㅋㅋㅋㅋ");
+            showText("컴퓨터 " + shootType + "점슛 실패ㅋㅋㅋ");
         }
     }
 
@@ -95,22 +129,22 @@ function onUserShoot(shootType) {
     var userScoreElem = document.getElementById("user-score");
 
     if (shootType === 2) {
-        if (Math.random() < user['percent2' + shootType]) {
-            showText("2점슛 성공~~~~~");
+        if (Math.random() < user['percent' + shootType]) {
+            showText(shootType + "점슛 성공~~~~~");
 
             updateUserScore(shootType);
 
         } else {
-            showText("2점슛 실패ㅠ");
+            showText(shootType + "점슛 실패ㅠ");
         }
     } else {
-        if (Math.random() < user['percent3' + shootType]) {
-            showText("3점슛 성공~~~~!~!!~!!!");
+        if (Math.random() < user['percent' + shootType]) {
+            showText(shootType + "점슛 성공~~~~!~!!~!!!");
 
             updateUserScore(shootType);
 
         } else {
-            showText("3점슛 실패ㅠ");
+            showText(shootType + "점슛 실패ㅠ");
         }
     }
 
