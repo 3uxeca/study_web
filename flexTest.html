@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flexible Box</title>
+
+    <style>
+        .f_contents { display: flex; justify-content: center; align-items: center; width: 100%; flex-wrap: wrap; }
+        .flex { display: flex; display: -webkit-flex; display: -ms-flexbox;-webkit-align-items: center;  width: 100%;    align-items: center;  }
+        .flex.sa { justify-content: space-around; }
+        .flex.sb { justify-content: space-between; }
+        .flex.fc { justify-content: center; }
+        .flex.fs { align-items: flex-start; }
+        .flex.fe { align-items: flex-end; }        
+        .flex.rr { flex-direction: row-reverse;}   
+        .flex.co { flex-direction: column; }
+        .flex.wr { flex-wrap: wrap;}
+
+        .box { width:400px; height:300px; border:1px solid #e0e0e0; text-align: center; padding-top: 5%; }
+        .box.one { order:0; flex-basis:33.3% }
+        .box.two { order:1; flex-basis:33.3%  }
+        .box.three { order:2; flex-basis:33.3%  }
+
+        .text { width:400px; text-align:center; }
+    </style>
+</head>
+<body>
+    <div class="f_contents">
+        <div class="flex sa">
+            <div class="box two">A</div>
+            <div class="box three">B</div>
+            <div class="box one">C</div>
+        </div>
+    </div>    
+    <div class="f_contents">
+        <div class="flex sa">
+            <div class="text">box 1</div>
+            <div class="text">box 2</div>
+            <div class="text">box 3</div>
+        </div>        
+    </div>    
+</body>
+</html>
