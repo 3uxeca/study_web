@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+    <style>
+
+        .add_image_file {
+            float: left;
+            width: 36px;
+            height: 36px;
+            border: 1px solid #ccc;
+            background: url('icon-image-add-line.png') no-repeat center;
+            background-color: #fff;
+            border-radius: 0px;
+            cursor: pointer;
+            margin-left: 6.5px;
+        }
+        .btn { padding: 6px 10px; }
+
+        .tooltip {
+            position: absolute;
+            z-index: 1070;
+            display: none;
+            font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+            font-size: 12px;
+            font-style: normal;
+            font-weight: normal;
+            line-height: 1.42857143;
+            text-align: left;
+            text-align: start;
+            text-decoration: none;
+            text-shadow: none;
+            text-transform: none;
+            letter-spacing: normal;
+            word-break: normal;
+            word-spacing: normal;
+            word-wrap: normal;
+            white-space: normal;
+            filter: alpha(opacity=0);
+            opacity: 0;
+            background-color: #000;
+            color: #fff;
+            border-radius: 4px;
+
+            line-break: auto;
+            }
+            .tooltip:after {
+                bottom: 100%;
+                left: 50%;
+                border: solid transparent;
+                content: " ";
+                height: 0;
+                width: 0;
+                position: absolute;
+                pointer-events: none;
+                border-color: rgba(0, 0, 0, 0);
+                border-bottom-color: #000000;
+                border-width: 5px;
+                margin-left: -5px;     
+            }
+            .tooltip.in {
+            filter: alpha(opacity=90);
+            opacity: .9;
+            }
+            .tooltip.top {
+            padding: 5px 0;
+            margin-top: -3px;
+            }
+            .tooltip.right {
+            padding: 0 5px;
+            margin-left: 3px;
+            }
+            .tooltip.bottom {
+            padding: 5px 5px;
+            margin-top: 45px;
+            line-height: 10px;
+            }
+            .tooltip.left {
+            padding: 0 5px;
+            margin-left: -3px;
+            }
+            .tooltip-inner {
+            word-break: break-all;
+            max-width: 300px;
+            padding: 3px 8px;
+            color: #fff;
+            text-align: center;
+            background-color: #000;
+            border-radius: 4px;
+            }
+
+            .arrow_box {
+            width: 47px;
+            height: 20px;
+            position: relative;
+            background: #000000;
+        
+            }
+            .arrow_box:after {
+                bottom: 100%;
+                left: 50%;
+                border: solid transparent;
+                content: " ";
+                height: 0;
+                width: 0;
+                position: absolute;
+                pointer-events: none;
+                border-color: rgba(0, 0, 0, 0);
+                border-bottom-color: #000000;
+                border-width: 5px;
+                margin-left: -5px;
+
+            }            
+            [tooltip]:before {
+                position: absolute;
+                content: attr(tooltip);
+                opacity: 0;
+                background-color: #000;
+                color: #fff;
+                margin-top: 30px;
+                margin-left: -23px;
+                line-height: 15px;
+                padding: 5px 5px; 
+                font-weight: 500;
+                border-radius: 5px;
+            }                
+
+            [tooltip]:hover:before {
+                opacity: 1;
+            }
+            [tooltip]:not([tooltip-persistent]):before {
+                pointer-events: none;
+            }
+
+            [tooltip]:after 
+            {
+            content: '';
+            position: relative;
+            border-style: solid;
+            border-width: 0 4px 5px 3.5px;
+            border-color: #000 transparent;
+            display: block;
+            width: 0;
+            z-index: 1;
+            top: 25.5px; 
+            left: 4px; 
+            opacity: 0;
+            }
+            [tooltip]:hover:after {
+                opacity: 1;
+            }
+            [tooltip]:not([tooltip-persistent]):after {
+                pointer-events: none;
+            }
+    </style>
+</head>
+<body>
+    <div class="note-btn-group btn-group note-file">
+        <button class="add_image_file btn" index="1" type="button" value="image" data-type="contents" tooltip="Picture"></button>
+        <!-- <div class="tooltip fade bottom in">picture</div> -->
+        <!-- <div class="arrow_box">picture</div> -->
+    </div>
+    <script>
+    //    $(".add_image_file.btn").mouseenter(function(e) {
+    //        $(".tooltip").css('display', 'block');
+    //    });
+    //    $(".add_image_file.btn").mouseleave(function(e) {
+    //        $(".tooltip").css('display', 'none');
+    //    }); 
+    </script>
+</body>
+</html>
